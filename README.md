@@ -29,7 +29,7 @@ Follow these steps to set up and run the project:
     ```bash
     php artisan serve
 
-5. **Install JavaScript Dependencies and Compile Frontend Assets**
+5. **Install JavaScript Dependencies and Compile Frontend Assets in a new Terminal**
     ```bash
     npm install
     npm run dev
