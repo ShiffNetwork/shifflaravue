@@ -1,6 +1,7 @@
 import { createApp, h } from "vue";
-import { createInertiaApp } from "@inertiajs/vue3";
+import { Head, Link, createInertiaApp } from "@inertiajs/vue3";
 import '../css/app.css';
+
 
 createInertiaApp({
     resolve: (name) => {
@@ -10,12 +11,15 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
+            .component('Link', Link)
+            .component('Head', Head)
             .mount(el);
     },
     progress: {
         color: "red",
         showSpinner: true,
     },
+    title: title => "ShiffLaraVue - " + title
 });
 
 

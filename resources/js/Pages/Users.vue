@@ -1,12 +1,34 @@
 <template>
-    <h1>Users </h1>
+    <Head>
+        <title>Users</title>
+        <meta
+            type="description"
+            content="Information about users"
+            head-key="description"
+        />
+    </Head>
+    <Layout>
 
-    <Nav></Nav>
+        <h1 class="text-3xl">Users</h1>
+
+        <Nav></Nav>
+
+        <ul>
+            <li 
+                v-for="user in users"
+                :key="user.id"
+                v-text="user.name"
+            />
+
+        </ul>
+    </Layout>
 </template>
 
-<script >
-import Nav from '../Shared/nav.vue';
-export default {
-    components: { Nav },
-}
+<script setup>
+import Layout from '../Shared/Layout.vue';
+
+
+defineProps({
+    users: Array
+})
 </script>
